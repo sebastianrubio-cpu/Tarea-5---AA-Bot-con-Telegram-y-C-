@@ -1,7 +1,5 @@
-```python
-import os
 
-readme_content = """# Documentación Técnica: Telegram Bot API
+"""# Documentación Técnica: Telegram Bot API
 
 ## 1. Especificaciones de Versión
 El repositorio opera bajo restricciones de compatibilidad heredada. Las versiones fijadas en la arquitectura son:
