@@ -17,11 +17,7 @@ El código heredado compila en entornos modernos, pero arrastra ineficiencias de
 Reemplaza los bloques de limpieza manual por declaraciones `using` implícitas.
 
 ```
-
-```text
-[file-tag: /mnt/data/README.md]
-
-```csharp
+csharp
 // C# 7.3 (Actual)
 var cts = new CancellationTokenSource();
 // ... ejecución ...
@@ -36,7 +32,8 @@ using var cts = new CancellationTokenSource();
 **Validación de nulos (Pattern Matching):**
 Sustituye los operadores lógicos tradicionales por coincidencia de patrones. Esto previene excepciones de referencia nula al procesar el objeto `Update`.
 
-```csharp
+```
+csharp
 // C# 7.3 (Actual)
 if (update.Message == null || update.Message.Text == null) return;
 
@@ -55,7 +52,8 @@ Si la infraestructura requiere una versión antigua de la librería, el modelo d
 2. Restaura los suscriptores de eventos en el objeto cliente.
 3. Añade el método de detención explícito.
 
-```csharp
+```
+csharp
 // Implementación obligatoria para v16.x
 botClient.OnMessage += Bot_OnMessage;
 botClient.StartReceiving();
