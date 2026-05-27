@@ -31,6 +31,8 @@ namespace TelegramBot
             cts.Cancel();
         }
 
+
+        // Esta funcion me quito años de vida
         private static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
             if (update.Message == null || update.Message.Text == null) return;
@@ -38,6 +40,7 @@ namespace TelegramBot
             var chatId = update.Message.Chat.Id;
             var messageText = update.Message.Text.ToLower();
 
+            // Ahora esta separado por funcion, SendMessage ya no es universal para todo, cada caso tiene su propia respuesta.
             // 1. Comando de Bienvenida /start
             if (messageText == "/start")
             {
@@ -63,7 +66,7 @@ namespace TelegramBot
             }
             else if (messageText.Contains("contact"))
             {
-                await botClient.SendContact(chatId, "+593999999999", "Secretaria", "UISEK", cancellationToken: cancellationToken);
+                await botClient.SendContact(chatId, "+1-234567890", "Johnny", "SIlverhand", cancellationToken: cancellationToken);
             }
             // 4. Echo genérico
             else
